@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "policy": "public-reference-v0.1",
+  "cases": [
+    { "scenario": "STABLE_BASELINE", "seed": 42, "load": 0.50, "mode": "PRIMARY", "evidenceProfile": "VERIFIED", "previousTrust": 0.95 },
+    { "scenario": "GATEWAY_LOAD_SURGE", "seed": 42, "load": 0.75, "mode": "PRIMARY", "evidenceProfile": "VERIFIED", "previousTrust": 0.75 },
+    { "scenario": "DB_LATENCY_SPIKE", "seed": 42, "load": 0.75, "mode": "PRIMARY", "evidenceProfile": "DEGRADED", "previousTrust": 0.75 },
+    { "scenario": "AUTH_FAILURE", "seed": 42, "load": 0.75, "mode": "FALLBACK", "evidenceProfile": "CONFLICTED", "previousTrust": 0.50 },
+    { "scenario": "CACHE_EVICTION_STORM", "seed": 42, "load": 0.75, "mode": "HEURISTIC", "evidenceProfile": "LOST", "previousTrust": 0.10 },
+    { "scenario": "DB_LATENCY_SPIKE", "seed": 101, "load": 0.90, "mode": "HEURISTIC", "evidenceProfile": "DEGRADED", "previousTrust": 0.75 },
+    { "scenario": "AUTH_FAILURE", "seed": 101, "load": 0.90, "mode": "PRIMARY", "evidenceProfile": "VERIFIED", "previousTrust": 0.75 },
+    { "scenario": "GATEWAY_LOAD_SURGE", "seed": 101, "load": 0.90, "mode": "FALLBACK", "evidenceProfile": "CONFLICTED", "previousTrust": 0.50 },
+    { "scenario": "CACHE_EVICTION_STORM", "seed": 101, "load": 0.90, "mode": "PRIMARY", "evidenceProfile": "DEGRADED", "previousTrust": 0.75 },
+    { "scenario": "STABLE_BASELINE", "seed": 101, "load": 0.50, "mode": "HEURISTIC", "evidenceProfile": "LOST", "previousTrust": 0.10 }
+  ]
+}

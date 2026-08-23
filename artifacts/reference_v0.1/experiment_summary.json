@@ -1,0 +1,2384 @@
+{
+  "schema_version": "1.0",
+  "policy": "public-reference-v0.1",
+  "record_count": 10,
+  "gate_counts": {
+    "BLOCK": 2,
+    "EXECUTE": 1,
+    "EXECUTE_WITH_LIMITS": 4,
+    "REQUIRE_HUMAN_REVIEW": 2,
+    "SIMULATE_ONLY": 1
+  },
+  "records": [
+    {
+      "config": {
+        "scenario": "STABLE_BASELINE",
+        "seed": 42,
+        "load": 0.5,
+        "mode": "PRIMARY",
+        "evidenceProfile": "VERIFIED",
+        "previousTrust": 0.95
+      },
+      "result": {
+        "id": "SIM-42-0000W7",
+        "config": {
+          "scenario": "STABLE_BASELINE",
+          "seed": 42,
+          "load": 0.5,
+          "mode": "PRIMARY",
+          "evidenceProfile": "VERIFIED",
+          "previousTrust": 0.95
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 30,
+              "errors": 0.01,
+              "load": 0.5,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.35,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.4,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.25,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.988,
+          "errors": 0.01,
+          "latency": 35,
+          "throughput": 1565,
+          "classification": "NORMAL"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 30,
+              "errors": 0.01,
+              "load": 0.5,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.35,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.4,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.25,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.988,
+          "errors": 0.01,
+          "latency": 35,
+          "throughput": 1565,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 30,
+              "errors": 0.01,
+              "load": 0.5,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.35,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.4,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.25,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.988,
+          "errors": 0.01,
+          "latency": 35,
+          "throughput": 1565,
+          "classification": "NORMAL"
+        },
+        "decision": {
+          "state": "NORMAL",
+          "primary": "gateway",
+          "path": [
+            "gateway"
+          ],
+          "actions": [
+            "NO_ACTION"
+          ],
+          "utility": {
+            "NO_ACTION": 0.615,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0,
+            "ISOLATE_SERVICE": 0,
+            "CIRCUIT_BREAKER": 0
+          },
+          "confidence": 0.871
+        },
+        "trustBefore": {
+          "raw": 0.9517166666666668,
+          "bounded": 0.9508583333333334,
+          "previous": 0.95,
+          "cap": 1,
+          "delta": 0.0008583333333334053,
+          "gate": "EXECUTE",
+          "reasons": [],
+          "components": {
+            "evidence": 0.9496666666666668,
+            "consensus": 0.95,
+            "stability": 0.9708333333333333
+          }
+        },
+        "trustAfter": {
+          "raw": 0.9517166666666668,
+          "bounded": 0.9512875000000001,
+          "previous": 0.9508583333333334,
+          "cap": 1,
+          "delta": 0.00042916666666670267,
+          "gate": "EXECUTE",
+          "reasons": [],
+          "components": {
+            "evidence": 0.9496666666666668,
+            "consensus": 0.95,
+            "stability": 0.9708333333333333
+          }
+        },
+        "applied": [
+          "NO_ACTION"
+        ],
+        "modelCheckPassed": true,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced NORMAL."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "gateway selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "NO_ACTION evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "PASS",
+            "message": "EXECUTE at 95.1% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "PASS",
+            "message": "Post-gate state checked inside the same reference model."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "GATEWAY_LOAD_SURGE",
+        "seed": 42,
+        "load": 0.75,
+        "mode": "PRIMARY",
+        "evidenceProfile": "VERIFIED",
+        "previousTrust": 0.75
+      },
+      "result": {
+        "id": "SIM-42-000140",
+        "config": {
+          "scenario": "GATEWAY_LOAD_SURGE",
+          "seed": 42,
+          "load": 0.75,
+          "mode": "PRIMARY",
+          "evidenceProfile": "VERIFIED",
+          "previousTrust": 0.75
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 210,
+              "errors": 0.15,
+              "load": 1.6,
+              "health": 0.24222222222222223,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.6,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.7620067340067339,
+          "errors": 0.05242424242424242,
+          "latency": 210,
+          "throughput": 1155,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 88,
+              "errors": 0.0525,
+              "load": 0.728,
+              "health": 0.8298888888888889,
+              "instances": 3,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.6,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.940087542087542,
+          "errors": 0.02287878787878788,
+          "latency": 88,
+          "throughput": 1470,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 126,
+              "errors": 0.075,
+              "load": 1.04,
+              "health": 0.6588888888888889,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.6,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8882693602693601,
+          "errors": 0.029696969696969697,
+          "latency": 126,
+          "throughput": 1379,
+          "classification": "CONTAINMENT"
+        },
+        "decision": {
+          "state": "ACTIVE_CASCADE",
+          "primary": "gateway",
+          "path": [
+            "gateway"
+          ],
+          "actions": [
+            "RATE_LIMIT",
+            "SCALE_UP"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0.559,
+            "SCALE_UP": 0.246,
+            "ISOLATE_SERVICE": 0,
+            "CIRCUIT_BREAKER": 0
+          },
+          "confidence": 0.812
+        },
+        "trustBefore": {
+          "raw": 0.8264355780022445,
+          "bounded": 0.7882177890011223,
+          "previous": 0.75,
+          "cap": 1,
+          "delta": 0.03821778900112227,
+          "gate": "EXECUTE_WITH_LIMITS",
+          "reasons": [],
+          "components": {
+            "evidence": 0.8413355780022446,
+            "consensus": 0.95,
+            "stability": 0.875
+          }
+        },
+        "trustAfter": {
+          "raw": 0.8712301907968573,
+          "bounded": 0.8297239898989898,
+          "previous": 0.7882177890011223,
+          "cap": 1,
+          "delta": 0.041506200897867496,
+          "gate": "EXECUTE",
+          "reasons": [],
+          "components": {
+            "evidence": 0.8901907968574635,
+            "consensus": 0.95,
+            "stability": 0.875
+          }
+        },
+        "applied": [
+          "RATE_LIMIT"
+        ],
+        "modelCheckPassed": true,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced ACTIVE_CASCADE."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "gateway selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "RATE_LIMIT + SCALE_UP evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "PASS",
+            "message": "EXECUTE_WITH_LIMITS at 78.8% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "PASS",
+            "message": "Post-gate state checked inside the same reference model."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "DB_LATENCY_SPIKE",
+        "seed": 42,
+        "load": 0.75,
+        "mode": "PRIMARY",
+        "evidenceProfile": "DEGRADED",
+        "previousTrust": 0.75
+      },
+      "result": {
+        "id": "SIM-42-0000ZE",
+        "config": {
+          "scenario": "DB_LATENCY_SPIKE",
+          "seed": 42,
+          "load": 0.75,
+          "mode": "PRIMARY",
+          "evidenceProfile": "DEGRADED",
+          "previousTrust": 0.75
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 120,
+              "errors": 0.04,
+              "load": 0.75,
+              "health": 0.773323522205154,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 320,
+              "errors": 0.08,
+              "load": 1.35,
+              "health": 0.14427777777777778,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.692840461274289,
+          "errors": 0.03818181818181818,
+          "latency": 320,
+          "throughput": 1066,
+          "classification": "CASCADE_RISK"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 84,
+              "errors": 0.024,
+              "load": 0.75,
+              "health": 0.8727931322102745,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.35,
+              "health": 0.7700555555555555,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8936494340031134,
+          "errors": 0.022424242424242426,
+          "latency": 84,
+          "throughput": 1398,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 84,
+              "errors": 0.024,
+              "load": 0.75,
+              "health": 0.8727931322102745,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.35,
+              "health": 0.7700555555555555,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8936494340031134,
+          "errors": 0.022424242424242426,
+          "latency": 84,
+          "throughput": 1398,
+          "classification": "CONTAINMENT"
+        },
+        "decision": {
+          "state": "CASCADE_RISK",
+          "primary": "database",
+          "path": [
+            "database",
+            "gateway"
+          ],
+          "actions": [
+            "CIRCUIT_BREAKER"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0.277,
+            "ISOLATE_SERVICE": 0,
+            "CIRCUIT_BREAKER": 0.503
+          },
+          "confidence": 0.785
+        },
+        "trustBefore": {
+          "raw": 0.5129089416368843,
+          "bounded": 0.6314544708184422,
+          "previous": 0.75,
+          "cap": 1,
+          "delta": -0.11854552918155781,
+          "gate": "EXECUTE_WITH_LIMITS",
+          "reasons": [],
+          "components": {
+            "evidence": 0.7330680325459751,
+            "consensus": 0.5625,
+            "stability": 0.6
+          }
+        },
+        "trustAfter": {
+          "raw": 0.7050725386070985,
+          "bounded": 0.6682635047127703,
+          "previous": 0.6314544708184422,
+          "cap": 1,
+          "delta": 0.0368090338943281,
+          "gate": "EXECUTE_WITH_LIMITS",
+          "reasons": [],
+          "components": {
+            "evidence": 0.8039437507283105,
+            "consensus": 0.675,
+            "stability": 0.8225
+          }
+        },
+        "applied": [
+          "CIRCUIT_BREAKER"
+        ],
+        "modelCheckPassed": true,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced CASCADE_RISK."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "database selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "CIRCUIT_BREAKER evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "PASS",
+            "message": "EXECUTE_WITH_LIMITS at 63.1% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "PASS",
+            "message": "Post-gate state checked inside the same reference model."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "AUTH_FAILURE",
+        "seed": 42,
+        "load": 0.75,
+        "mode": "FALLBACK",
+        "evidenceProfile": "CONFLICTED",
+        "previousTrust": 0.5
+      },
+      "result": {
+        "id": "SIM-42-0000QR",
+        "config": {
+          "scenario": "AUTH_FAILURE",
+          "seed": 42,
+          "load": 0.75,
+          "mode": "FALLBACK",
+          "evidenceProfile": "CONFLICTED",
+          "previousTrust": 0.5
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 30,
+              "errors": 0.21,
+              "load": 0.75,
+              "health": 0.748,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 120,
+              "errors": 0.35,
+              "load": 1.1,
+              "health": 0.3272222222222222,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.6,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.7550841750841751,
+          "errors": 0.15303030303030302,
+          "latency": 120,
+          "throughput": 1023,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 21,
+              "errors": 0.063,
+              "load": 0.75,
+              "health": 0.9244,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.1,
+              "health": 0.8325555555555555,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.6,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.9310437710437709,
+          "errors": 0.03333333333333333,
+          "latency": 60,
+          "throughput": 1440,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 30,
+              "errors": 0.21,
+              "load": 0.75,
+              "health": 0.748,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 120,
+              "errors": 0.35,
+              "load": 1.1,
+              "health": 0.3272222222222222,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 26,
+              "errors": 0.01,
+              "load": 0.6,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.375,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.7550841750841751,
+          "errors": 0.15303030303030302,
+          "latency": 120,
+          "throughput": 1023,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "decision": {
+          "state": "ACTIVE_CASCADE",
+          "primary": "auth",
+          "path": [
+            "auth",
+            "gateway"
+          ],
+          "actions": [
+            "ISOLATE_SERVICE",
+            "CIRCUIT_BREAKER"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0,
+            "ISOLATE_SERVICE": 0.393,
+            "CIRCUIT_BREAKER": 0.235
+          },
+          "confidence": 0.822
+        },
+        "trustBefore": {
+          "raw": 0.2892425364758697,
+          "bounded": 0.39462126823793486,
+          "previous": 0.5,
+          "cap": 0.4,
+          "delta": -0.10537873176206514,
+          "gate": "REQUIRE_HUMAN_REVIEW",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.6668563411896745,
+            "consensus": 0.35,
+            "stability": 0.625
+          }
+        },
+        "trustAfter": {
+          "raw": 0.2892425364758697,
+          "bounded": 0.3419319023569023,
+          "previous": 0.39462126823793486,
+          "cap": 0.4,
+          "delta": -0.05268936588103257,
+          "gate": "REQUIRE_HUMAN_REVIEW",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.6668563411896745,
+            "consensus": 0.35,
+            "stability": 0.625
+          }
+        },
+        "applied": [],
+        "modelCheckPassed": false,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced ACTIVE_CASCADE."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "auth selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "ISOLATE_SERVICE + CIRCUIT_BREAKER evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "BLOCK",
+            "message": "REQUIRE_HUMAN_REVIEW at 39.5% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "WARN",
+            "message": "No model action applied; more evidence or human review is required."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "CACHE_EVICTION_STORM",
+        "seed": 42,
+        "load": 0.75,
+        "mode": "HEURISTIC",
+        "evidenceProfile": "LOST",
+        "previousTrust": 0.1
+      },
+      "result": {
+        "id": "SIM-42-000182",
+        "config": {
+          "scenario": "CACHE_EVICTION_STORM",
+          "seed": 42,
+          "load": 0.75,
+          "mode": "HEURISTIC",
+          "evidenceProfile": "LOST",
+          "previousTrust": 0.1
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 80,
+              "errors": 0.01,
+              "load": 0.75,
+              "health": 0.898212411094043,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 160,
+              "errors": 0.05,
+              "load": 1.3,
+              "health": 0.5483333333333333,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 70,
+              "errors": 0.55,
+              "load": 1.4,
+              "health": 0.12333333333333335,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.6836704276042553,
+          "errors": 0.11909090909090908,
+          "latency": 160,
+          "throughput": 964,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 56,
+              "errors": 0.006,
+              "load": 0.75,
+              "health": 0.9566153544324968,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 120,
+              "errors": 0.05,
+              "load": 0.975,
+              "health": 0.7184722222222222,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.4,
+              "health": 0.7575555555555555,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8630829356866152,
+          "errors": 0.02515151515151515,
+          "latency": 120,
+          "throughput": 1346,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 80,
+              "errors": 0.01,
+              "load": 0.75,
+              "health": 0.898212411094043,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 35,
+              "errors": 0.01,
+              "load": 0.525,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 160,
+              "errors": 0.05,
+              "load": 1.3,
+              "health": 0.5483333333333333,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 70,
+              "errors": 0.55,
+              "load": 1.4,
+              "health": 0.12333333333333335,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.6836704276042553,
+          "errors": 0.11909090909090908,
+          "latency": 160,
+          "throughput": 964,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "decision": {
+          "state": "ACTIVE_CASCADE",
+          "primary": "cache",
+          "path": [
+            "cache",
+            "database",
+            "gateway"
+          ],
+          "actions": [
+            "ISOLATE_SERVICE",
+            "CIRCUIT_BREAKER"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0,
+            "ISOLATE_SERVICE": 0.411,
+            "CIRCUIT_BREAKER": 0.248
+          },
+          "confidence": 0.81
+        },
+        "trustBefore": {
+          "raw": 0,
+          "bounded": 0.05,
+          "previous": 0.1,
+          "cap": 0.4,
+          "delta": -0.05,
+          "gate": "BLOCK",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.3278901425347518,
+            "consensus": 0.1,
+            "stability": 0.1
+          }
+        },
+        "trustAfter": {
+          "raw": 0,
+          "bounded": 0.025,
+          "previous": 0.05,
+          "cap": 0.4,
+          "delta": -0.025,
+          "gate": "BLOCK",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.3278901425347518,
+            "consensus": 0.1,
+            "stability": 0.1
+          }
+        },
+        "applied": [],
+        "modelCheckPassed": false,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced ACTIVE_CASCADE."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "cache selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "ISOLATE_SERVICE + CIRCUIT_BREAKER evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "BLOCK",
+            "message": "BLOCK at 5.0% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "WARN",
+            "message": "No model action applied; more evidence or human review is required."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "DB_LATENCY_SPIKE",
+        "seed": 101,
+        "load": 0.9,
+        "mode": "HEURISTIC",
+        "evidenceProfile": "DEGRADED",
+        "previousTrust": 0.75
+      },
+      "result": {
+        "id": "SIM-101-000111",
+        "config": {
+          "scenario": "DB_LATENCY_SPIKE",
+          "seed": 101,
+          "load": 0.9,
+          "mode": "HEURISTIC",
+          "evidenceProfile": "DEGRADED",
+          "previousTrust": 0.75
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 119,
+              "errors": 0.04,
+              "load": 0.9,
+              "health": 0.7524609079141583,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 320,
+              "errors": 0.08,
+              "load": 1.35,
+              "health": 0.14427777777777778,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.6865184569436842,
+          "errors": 0.03818181818181818,
+          "latency": 320,
+          "throughput": 1056,
+          "classification": "CASCADE_RISK"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 83,
+              "errors": 0.024,
+              "load": 0.9,
+              "health": 0.8506893022065775,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.35,
+              "health": 0.7700555555555555,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8869513036989628,
+          "errors": 0.022424242424242426,
+          "latency": 83,
+          "throughput": 1387,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 83,
+              "errors": 0.024,
+              "load": 0.9,
+              "health": 0.8506893022065775,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.35,
+              "health": 0.7700555555555555,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8869513036989628,
+          "errors": 0.022424242424242426,
+          "latency": 83,
+          "throughput": 1387,
+          "classification": "CONTAINMENT"
+        },
+        "decision": {
+          "state": "CASCADE_RISK",
+          "primary": "database",
+          "path": [
+            "database",
+            "gateway"
+          ],
+          "actions": [
+            "CIRCUIT_BREAKER"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0.277,
+            "ISOLATE_SERVICE": 0,
+            "CIRCUIT_BREAKER": 0.504
+          },
+          "confidence": 0.784
+        },
+        "trustBefore": {
+          "raw": 0.5011531220115311,
+          "bounded": 0.6255765610057655,
+          "previous": 0.75,
+          "cap": 0.7,
+          "delta": -0.12442343899423447,
+          "gate": "EXECUTE_WITH_LIMITS",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP"
+          ],
+          "components": {
+            "evidence": 0.7068394856478948,
+            "consensus": 0.5625,
+            "stability": 0.6
+          }
+        },
+        "trustAfter": {
+          "raw": 0.6918030860814726,
+          "bounded": 0.658689823543619,
+          "previous": 0.6255765610057655,
+          "cap": 0.7,
+          "delta": 0.033113262537853516,
+          "gate": "EXECUTE_WITH_LIMITS",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP"
+          ],
+          "components": {
+            "evidence": 0.773650434566321,
+            "consensus": 0.675,
+            "stability": 0.823125
+          }
+        },
+        "applied": [
+          "CIRCUIT_BREAKER"
+        ],
+        "modelCheckPassed": true,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced CASCADE_RISK."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "database selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "CIRCUIT_BREAKER evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "PASS",
+            "message": "EXECUTE_WITH_LIMITS at 62.6% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "PASS",
+            "message": "Post-gate state checked inside the same reference model."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "AUTH_FAILURE",
+        "seed": 101,
+        "load": 0.9,
+        "mode": "PRIMARY",
+        "evidenceProfile": "VERIFIED",
+        "previousTrust": 0.75
+      },
+      "result": {
+        "id": "SIM-101-0000SE",
+        "config": {
+          "scenario": "AUTH_FAILURE",
+          "seed": 101,
+          "load": 0.9,
+          "mode": "PRIMARY",
+          "evidenceProfile": "VERIFIED",
+          "previousTrust": 0.75
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 29,
+              "errors": 0.21,
+              "load": 0.9,
+              "health": 0.723,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 120,
+              "errors": 0.35,
+              "load": 1.1,
+              "health": 0.3272222222222222,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.72,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.7475084175084175,
+          "errors": 0.15303030303030302,
+          "latency": 120,
+          "throughput": 1013,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 20,
+              "errors": 0.063,
+              "load": 0.9,
+              "health": 0.8994,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.1,
+              "health": 0.8325555555555555,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.72,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.9234680134680133,
+          "errors": 0.03333333333333333,
+          "latency": 60,
+          "throughput": 1428,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 29,
+              "errors": 0.105,
+              "load": 0.9,
+              "health": 0.849,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 120,
+              "errors": 0.1225,
+              "load": 1.1,
+              "health": 0.6002222222222222,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.72,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8518720538720538,
+          "errors": 0.06606060606060607,
+          "latency": 120,
+          "throughput": 1273,
+          "classification": "CONTAINMENT"
+        },
+        "decision": {
+          "state": "ACTIVE_CASCADE",
+          "primary": "auth",
+          "path": [
+            "auth",
+            "gateway"
+          ],
+          "actions": [
+            "ISOLATE_SERVICE",
+            "CIRCUIT_BREAKER"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0,
+            "ISOLATE_SERVICE": 0.394,
+            "CIRCUIT_BREAKER": 0.236
+          },
+          "confidence": 0.821
+        },
+        "trustBefore": {
+          "raw": 0.8228028058361391,
+          "bounded": 0.7864014029180695,
+          "previous": 0.75,
+          "cap": 1,
+          "delta": 0.03640140291806948,
+          "gate": "EXECUTE_WITH_LIMITS",
+          "reasons": [],
+          "components": {
+            "evidence": 0.8395028058361391,
+            "consensus": 0.95,
+            "stability": 0.875
+          }
+        },
+        "trustAfter": {
+          "raw": 0.8575906846240178,
+          "bounded": 0.8219960437710436,
+          "previous": 0.7864014029180695,
+          "cap": 1,
+          "delta": 0.035594640852974146,
+          "gate": "EXECUTE",
+          "reasons": [],
+          "components": {
+            "evidence": 0.8742906846240178,
+            "consensus": 0.95,
+            "stability": 0.875
+          }
+        },
+        "applied": [
+          "ISOLATE_SERVICE"
+        ],
+        "modelCheckPassed": true,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced ACTIVE_CASCADE."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "auth selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "ISOLATE_SERVICE + CIRCUIT_BREAKER evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "PASS",
+            "message": "EXECUTE_WITH_LIMITS at 78.6% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "PASS",
+            "message": "Post-gate state checked inside the same reference model."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "GATEWAY_LOAD_SURGE",
+        "seed": 101,
+        "load": 0.9,
+        "mode": "FALLBACK",
+        "evidenceProfile": "CONFLICTED",
+        "previousTrust": 0.5
+      },
+      "result": {
+        "id": "SIM-101-00015N",
+        "config": {
+          "scenario": "GATEWAY_LOAD_SURGE",
+          "seed": 101,
+          "load": 0.9,
+          "mode": "FALLBACK",
+          "evidenceProfile": "CONFLICTED",
+          "previousTrust": 0.5
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 210,
+              "errors": 0.15,
+              "load": 1.6,
+              "health": 0.24222222222222223,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.72,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.7620067340067339,
+          "errors": 0.05242424242424242,
+          "latency": 210,
+          "throughput": 1155,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 88,
+              "errors": 0.0525,
+              "load": 0.728,
+              "health": 0.8298888888888889,
+              "instances": 3,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.72,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.940087542087542,
+          "errors": 0.02287878787878788,
+          "latency": 88,
+          "throughput": 1470,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 210,
+              "errors": 0.15,
+              "load": 1.6,
+              "health": 0.24222222222222223,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.72,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.45,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.7620067340067339,
+          "errors": 0.05242424242424242,
+          "latency": 210,
+          "throughput": 1155,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "decision": {
+          "state": "ACTIVE_CASCADE",
+          "primary": "gateway",
+          "path": [
+            "gateway"
+          ],
+          "actions": [
+            "RATE_LIMIT",
+            "SCALE_UP"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0.559,
+            "SCALE_UP": 0.246,
+            "ISOLATE_SERVICE": 0,
+            "CIRCUIT_BREAKER": 0
+          },
+          "confidence": 0.812
+        },
+        "trustBefore": {
+          "raw": 0.28428928170594836,
+          "bounded": 0.3921446408529742,
+          "previous": 0.5,
+          "cap": 0.4,
+          "delta": -0.10785535914702582,
+          "gate": "REQUIRE_HUMAN_REVIEW",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.682598204264871,
+            "consensus": 0.35,
+            "stability": 0.5875
+          }
+        },
+        "trustAfter": {
+          "raw": 0.28428928170594836,
+          "bounded": 0.33821696127946127,
+          "previous": 0.3921446408529742,
+          "cap": 0.4,
+          "delta": -0.05392767957351291,
+          "gate": "REQUIRE_HUMAN_REVIEW",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.682598204264871,
+            "consensus": 0.35,
+            "stability": 0.5875
+          }
+        },
+        "applied": [],
+        "modelCheckPassed": false,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced ACTIVE_CASCADE."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "gateway selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "RATE_LIMIT + SCALE_UP evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "BLOCK",
+            "message": "REQUIRE_HUMAN_REVIEW at 39.2% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "WARN",
+            "message": "No model action applied; more evidence or human review is required."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "CACHE_EVICTION_STORM",
+        "seed": 101,
+        "load": 0.9,
+        "mode": "PRIMARY",
+        "evidenceProfile": "DEGRADED",
+        "previousTrust": 0.75
+      },
+      "result": {
+        "id": "SIM-101-00019P",
+        "config": {
+          "scenario": "CACHE_EVICTION_STORM",
+          "seed": 101,
+          "load": 0.9,
+          "mode": "PRIMARY",
+          "evidenceProfile": "DEGRADED",
+          "previousTrust": 0.75
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 79,
+              "errors": 0.01,
+              "load": 0.9,
+              "health": 0.8773497968030473,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 160,
+              "errors": 0.05,
+              "load": 1.3,
+              "health": 0.5483333333333333,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 70,
+              "errors": 0.55,
+              "load": 1.4,
+              "health": 0.12333333333333335,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.6773484232736506,
+          "errors": 0.11909090909090908,
+          "latency": 160,
+          "throughput": 955,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 55,
+              "errors": 0.006,
+              "load": 0.9,
+              "health": 0.9345115244287997,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 120,
+              "errors": 0.05,
+              "load": 0.975,
+              "health": 0.7184722222222222,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 60,
+              "errors": 0.04,
+              "load": 1.4,
+              "health": 0.7575555555555555,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.8563848053824645,
+          "errors": 0.02515151515151515,
+          "latency": 120,
+          "throughput": 1336,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 79,
+              "errors": 0.01,
+              "load": 0.9,
+              "health": 0.8773497968030473,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.63,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 160,
+              "errors": 0.05,
+              "load": 1.3,
+              "health": 0.5483333333333333,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 70,
+              "errors": 0.55,
+              "load": 1.4,
+              "health": 0.12333333333333335,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.6773484232736506,
+          "errors": 0.11909090909090908,
+          "latency": 160,
+          "throughput": 955,
+          "classification": "ACTIVE_CASCADE"
+        },
+        "decision": {
+          "state": "ACTIVE_CASCADE",
+          "primary": "cache",
+          "path": [
+            "cache",
+            "database",
+            "gateway"
+          ],
+          "actions": [
+            "ISOLATE_SERVICE",
+            "CIRCUIT_BREAKER"
+          ],
+          "utility": {
+            "NO_ACTION": 0,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0,
+            "ISOLATE_SERVICE": 0.412,
+            "CIRCUIT_BREAKER": 0.249
+          },
+          "confidence": 0.81
+        },
+        "trustBefore": {
+          "raw": 0.44055553503061085,
+          "bounded": 0.5952777675153054,
+          "previous": 0.75,
+          "cap": 1,
+          "delta": -0.15472223248469463,
+          "gate": "SIMULATE_ONLY",
+          "reasons": [],
+          "components": {
+            "evidence": 0.7160100804851562,
+            "consensus": 0.45000000000000007,
+            "stability": 0.625
+          }
+        },
+        "trustAfter": {
+          "raw": 0.44055553503061085,
+          "bounded": 0.517916651272958,
+          "previous": 0.5952777675153054,
+          "cap": 1,
+          "delta": -0.07736111624234732,
+          "gate": "SIMULATE_ONLY",
+          "reasons": [],
+          "components": {
+            "evidence": 0.7160100804851562,
+            "consensus": 0.45000000000000007,
+            "stability": 0.625
+          }
+        },
+        "applied": [],
+        "modelCheckPassed": false,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced ACTIVE_CASCADE."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "cache selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "ISOLATE_SERVICE + CIRCUIT_BREAKER evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "BLOCK",
+            "message": "SIMULATE_ONLY at 59.5% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "WARN",
+            "message": "No model action applied; more evidence or human review is required."
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "scenario": "STABLE_BASELINE",
+        "seed": 101,
+        "load": 0.5,
+        "mode": "HEURISTIC",
+        "evidenceProfile": "LOST",
+        "previousTrust": 0.1
+      },
+      "result": {
+        "id": "SIM-101-0000XU",
+        "config": {
+          "scenario": "STABLE_BASELINE",
+          "seed": 101,
+          "load": 0.5,
+          "mode": "HEURISTIC",
+          "evidenceProfile": "LOST",
+          "previousTrust": 0.1
+        },
+        "before": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 29,
+              "errors": 0.01,
+              "load": 0.5,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.35,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.4,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.25,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.988,
+          "errors": 0.01,
+          "latency": 36,
+          "throughput": 1565,
+          "classification": "NORMAL"
+        },
+        "proposed": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 29,
+              "errors": 0.01,
+              "load": 0.5,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.35,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.4,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.25,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.988,
+          "errors": 0.01,
+          "latency": 36,
+          "throughput": 1565,
+          "classification": "NORMAL"
+        },
+        "postGate": {
+          "services": {
+            "gateway": {
+              "id": "gateway",
+              "latency": 29,
+              "errors": 0.01,
+              "load": 0.5,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 1
+            },
+            "auth": {
+              "id": "auth",
+              "latency": 36,
+              "errors": 0.01,
+              "load": 0.35,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.8
+            },
+            "database": {
+              "id": "database",
+              "latency": 25,
+              "errors": 0.01,
+              "load": 0.4,
+              "health": 0.988,
+              "instances": 3,
+              "criticality": 0.9
+            },
+            "cache": {
+              "id": "cache",
+              "latency": 11,
+              "errors": 0.01,
+              "load": 0.25,
+              "health": 0.988,
+              "instances": 2,
+              "criticality": 0.6
+            }
+          },
+          "health": 0.988,
+          "errors": 0.01,
+          "latency": 36,
+          "throughput": 1565,
+          "classification": "NORMAL"
+        },
+        "decision": {
+          "state": "NORMAL",
+          "primary": "gateway",
+          "path": [
+            "gateway"
+          ],
+          "actions": [
+            "NO_ACTION"
+          ],
+          "utility": {
+            "NO_ACTION": 0.615,
+            "RATE_LIMIT": 0,
+            "SCALE_UP": 0,
+            "ISOLATE_SERVICE": 0,
+            "CIRCUIT_BREAKER": 0
+          },
+          "confidence": 0.871
+        },
+        "trustBefore": {
+          "raw": 0,
+          "bounded": 0.05,
+          "previous": 0.1,
+          "cap": 0.4,
+          "delta": -0.05,
+          "gate": "BLOCK",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.42933333333333334,
+            "consensus": 0.1,
+            "stability": 0.1
+          }
+        },
+        "trustAfter": {
+          "raw": 0,
+          "bounded": 0.025,
+          "previous": 0.05,
+          "cap": 0.4,
+          "delta": -0.025,
+          "gate": "BLOCK",
+          "reasons": [
+            "FALLBACK_RELIABILITY_CAP",
+            "LOW_CONSENSUS_CAP",
+            "HIGH_ENTROPY_CAP"
+          ],
+          "components": {
+            "evidence": 0.42933333333333334,
+            "consensus": 0.1,
+            "stability": 0.1
+          }
+        },
+        "applied": [],
+        "modelCheckPassed": false,
+        "events": [
+          {
+            "stage": "OBSERVE",
+            "level": "INFO",
+            "message": "Reference fault model produced NORMAL."
+          },
+          {
+            "stage": "EVALUATE",
+            "level": "INFO",
+            "message": "gateway selected as the primary affected service."
+          },
+          {
+            "stage": "SIMULATE",
+            "level": "INFO",
+            "message": "NO_ACTION evaluated in the reference model."
+          },
+          {
+            "stage": "GATE",
+            "level": "BLOCK",
+            "message": "BLOCK at 5.0% bounded trust."
+          },
+          {
+            "stage": "CHECK",
+            "level": "WARN",
+            "message": "No model action applied; more evidence or human review is required."
+          }
+        ]
+      }
+    }
+  ]
+}

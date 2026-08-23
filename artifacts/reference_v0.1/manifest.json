@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "artifact_source": "REAL_TYPESCRIPT_EXECUTION",
+  "policy": "public-reference-v0.1",
+  "deterministic": true,
+  "simulated_metrics": true,
+  "llm_generated_metrics": false,
+  "external_actions": false,
+  "source_config": "configs/reference_matrix.json",
+  "generator": "scripts/generate-artifacts.ts",
+  "record_count": 10,
+  "summary_sha256": "0e0bcfa58d4fc2162bb70f5864fa09eb0cd77aed021394765a3b6b90a1489103"
+}

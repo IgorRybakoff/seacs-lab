@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "SEACS Lab: Public Reference Simulator"
+message: "If you use this public reference implementation, please cite it."
+type: software
+authors:
+  - family-names: Rybakov
+    given-names: Igor
+version: 0.1.0
+date-released: 2026-08-23
+license: Apache-2.0
+repository-code: "https://github.com/IgorRybakoff/seacs-lab"
