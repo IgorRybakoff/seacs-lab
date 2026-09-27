@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "SEACS Lab: Public Reference Simulator"
+title: "SEACS Lab v0.1.0: Public Reference Simulator for the Self-Evolving Autonomous Control System"
 message: "If you use this public reference implementation, please cite it."
 type: software
 authors:
