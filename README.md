@@ -1,11 +1,16 @@
 # SEACS Lab
 
+**SEACS — Self-Evolving Autonomous Control System**  
+**SEACS Lab v0.1.0 — Public Reference Simulator**
+
 [![tests](https://github.com/IgorRybakoff/seacs-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/IgorRybakoff/seacs-lab/actions/workflows/tests.yml)
 [![license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-Deterministic TypeScript research simulator for studying bounded autonomous-control decisions under synthetic microservice failures.
+Deterministic TypeScript public reference implementation for studying bounded autonomous-control decisions under synthetic microservice failures.
 
-**Status:** public reference v0.1 · experimental · no production integration.
+**Status:** public reference v0.1.0 · experimental · no production integration.
+
+SEACS is the broader research architecture. SEACS Lab is its public, runnable reference simulator focused on bounded decisions, explicit trust gates, replayable evidence, and post-gate verification.
 
 ## Research question
 
