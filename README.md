@@ -12,6 +12,12 @@ Deterministic TypeScript public reference implementation for studying bounded au
 
 SEACS is the broader research architecture. SEACS Lab is its public, runnable reference simulator focused on bounded decisions, explicit trust gates, replayable evidence, and post-gate verification.
 
+## Publication (2026)
+
+**Igor Rybakoff**, “Проверяемое автономное управление: архитектура контроля решений ИИ в киберфизических и распределённых системах” (*Verifiable Autonomous Control: An Architecture for AI Decision Oversight in Cyber-Physical and Distributed Systems*, English translation), **Современная электроника / Modern Electronics**, No. 8 (2026), pp. 50–54. [Read the article (Russian)](https://www.cta.ru/read/soel/SoEl_2026-8pr/50/index.html).
+
+See [publication record and research-evidence scope](docs/PUBLICATION_SOEL_2026.md). Publication does not imply independent industrial validation of this public reference simulator.
+
 ## Research question
 
 Can a deterministic controller keep proposed mitigation actions behind an explicit trust gate as evidence quality degrades, while preserving a replayable separation between the initial state, the model proposal, and the post-gate model state?
